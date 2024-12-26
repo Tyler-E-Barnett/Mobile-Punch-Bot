@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="node_modules/@microsoft/teams-js@2.13.0/dist/MicrosoftTeams.min.js"></script>
+    <script
+      src="https://res.cdn.office.net/teams-js/2.13.0/js/MicrosoftTeams.min.js"
+      integrity="sha384-eCh6qbZkXfEZapUgP+aGo0x6qEpGiryOoYXrQr6BLrtZ988BjkbaVyRh1rQef3q9"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+      .submitClick {
+        margin: 5rem;
+        margin-left: 0rem;
+      }
+    </style>
+  </head>
+  <body class="theme-light">
+    <div class="surface">
+      <div class="panel">
+        <div></div>
+      </div>
+    </div>
+    <button onclick="getLocation()">Get Location</button>
+
+    <script type="module">
+      import { location, app, microsoftTeams } from "@microsoft/teams-js";
+
+      function getLocation() {
+        console.log("getting location...");
+        let locationProps = { allowChooseLocation: true, showMap: true };
+        if (location.isSupported()) {
+          const locationPromise = location.getLocation(locationProps);
+
+          locationPromise
+            .then(result => {
+              output(JSON.stringify(result));
+            })
+            .catch(error => {
+              output(error);
+            });
+        } else {
+          console.log("error");
+        }
+      }
+    </script>
+  </body>
+</html>

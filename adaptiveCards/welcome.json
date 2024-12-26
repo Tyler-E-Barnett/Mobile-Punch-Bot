@@ -1,0 +1,18 @@
+{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "size": "Medium",
+      "weight": "Bolder",
+      "text": "Welcome to PowerBot!"
+    },
+    {
+      "type": "TextBlock",
+      "text": "This bot will allow you to Punch in/out offsite!  simply type \"punch\" in the chat to bring up the function",
+      "wrap": true
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.4"
+}

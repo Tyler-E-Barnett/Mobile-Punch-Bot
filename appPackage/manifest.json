@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.16",
+  "version": "1.0.9",
+  "id": "${{TEAMS_APP_ID}}",
+  "packageName": "com.microsoft.teams.extension",
+  "developer": {
+    "name": "Tyler Barnett",
+    "websiteUrl": "https://www.example.com",
+    "privacyUrl": "https://www.example.com/termofuse",
+    "termsOfUseUrl": "https://www.example.com/privacy"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "PowerBot",
+    "full": "PowerStation Timecard Bot"
+  },
+  "description": {
+    "short": "Powerstation PunchBot",
+    "full": "This bot allows crew techs to punch in offsite.  It will note the time, run and location.  More Features to come in the future!"
+  },
+  "accentColor": "#FFFFFF",
+  "bots": [
+    {
+      "botId": "${{BOT_ID}}",
+      "scopes": ["personal", "team", "groupchat"],
+      "supportsFiles": false,
+      "isNotificationOnly": false,
+      "commandLists": [
+        {
+          "scopes": ["personal", "team", "groupchat"],
+          "commands": [
+            {
+              "title": "punch",
+              "description": "Punch in/out"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "composeExtensions": [],
+  "configurableTabs": [],
+  "staticTabs": [],
+  "permissions": ["identity", "messageTeamMembers"],
+  "devicePermissions": ["geolocation"],
+  "validDomains": ["botbd4b50.azurewebsites.net"]
+}
